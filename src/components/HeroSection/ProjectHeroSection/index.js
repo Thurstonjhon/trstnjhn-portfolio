@@ -5,7 +5,6 @@ import GridBackground from 'components/GridBg'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper.min.css'
 import { useContext, useEffect, useRef } from 'react'
 import { Store } from 'context/store'
 import { cursors } from 'utils/common.const'
