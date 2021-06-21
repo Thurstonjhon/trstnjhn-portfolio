@@ -48,6 +48,8 @@ const Home = ({ projects }) => {
         <motion.div ref={scrollRef} data-scroll-container>
             <MetaWeb title="Home" />
             <HeroSection
+                subtitle="Selected"
+                title="Works"
                 data-scroll-section
                 as={motion.section}
                 exit={{ opacity: 0 }}

@@ -12,6 +12,7 @@ import {
     faLongArrowAltLeft
 } from '@fortawesome/free-solid-svg-icons'
 import { cursors } from 'utils/common.const'
+import { AnimatePresence, motion } from 'framer-motion'
 
 const PageHeader = () => {
     const { state, dispatch } = useContext(Store)
@@ -32,67 +33,77 @@ const PageHeader = () => {
             })
     }
 
-    if (router.pathname.includes('work')) {
-        return (
-            <Header>
-                <Header.Back onClick={() => router.back()} {...hoverEvt}>
-                    <FontAwesomeIcon icon={faLongArrowAltLeft} /> Back
-                </Header.Back>
-
-                <Header.Visit
-                    onClick={() => window.open(header.project.fields.link)}
-                    {...hoverEvt}
-                >
-                    <FontAwesomeIcon icon={faExternalLinkSquareAlt} /> Visit
-                </Header.Visit>
-            </Header>
-        )
-    }
-
     return (
-        <Header data-scroll data-scroll-sticky data-scroll-target="main">
-            <Header.Logo>
-                <Image
-                    src="/assets/logo-v2.png"
-                    width="40"
-                    height="40"
-                    alt="Thruston"
-                />
-                <Header.LogoText {...hoverEvt}>
-                    <span>Thurston</span>
-                    <span>Frontend Developer</span>
-                </Header.LogoText>
-            </Header.Logo>
-            <Header.Menu>
-                <Header.MenuItem>
-                    <Header.Text
-                        onClick={() => router.push('/profile')}
-                        size={1.2}
+        <AnimatePresence>
+            {router.pathname.includes('work') ? (
+                <Header
+                    as={motion.header}
+                    initial={{ y: -40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                >
+                    <Header.Back onClick={() => router.back()} {...hoverEvt}>
+                        <FontAwesomeIcon icon={faLongArrowAltLeft} /> Back
+                    </Header.Back>
+
+                    <Header.Visit
+                        onClick={() => window.open(header.project.fields.link)}
                         {...hoverEvt}
                     >
-                        Profile
-                    </Header.Text>
-                </Header.MenuItem>
-                <Header.MenuItem>
-                    <Header.Text
-                        onClick={() => router.push('/lab')}
-                        size={1.2}
-                        {...hoverEvt}
-                    >
-                        Lab
-                    </Header.Text>
-                </Header.MenuItem>
-                <Header.MenuItem>
-                    <Header.Text
-                        onClick={() => router.push('/connect')}
-                        size={1.2}
-                        {...hoverEvt}
-                    >
-                        Connect
-                    </Header.Text>
-                </Header.MenuItem>
-            </Header.Menu>
-        </Header>
+                        <FontAwesomeIcon icon={faExternalLinkSquareAlt} /> Visit
+                    </Header.Visit>
+                </Header>
+            ) : (
+                <Header
+                    as={motion.header}
+                    initial={{ y: -40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -40, opacity: 0 }}
+                >
+                    <Header.Logo>
+                        <Image
+                            src="/assets/logo-v2.png"
+                            width="40"
+                            height="40"
+                            alt="Thruston"
+                        />
+                        <Header.LogoText {...hoverEvt}>
+                            <span>Thurston</span>
+                            <span>Frontend Developer</span>
+                        </Header.LogoText>
+                    </Header.Logo>
+                    <Header.Menu>
+                        <Header.MenuItem>
+                            <Header.Text
+                                onClick={() => router.push('/')}
+                                size={1.2}
+                                {...hoverEvt}
+                            >
+                                Works
+                            </Header.Text>
+                        </Header.MenuItem>
+                        <Header.MenuItem>
+                            <Header.Text
+                                onClick={() => router.push('/profile')}
+                                size={1.2}
+                                {...hoverEvt}
+                            >
+                                Profile
+                            </Header.Text>
+                        </Header.MenuItem>
+                        <Header.MenuItem>
+                            <Header.Text
+                                onClick={() => router.push('/lab')}
+                                size={1.2}
+                                {...hoverEvt}
+                            >
+                                Lab
+                            </Header.Text>
+                        </Header.MenuItem>
+                    </Header.Menu>
+                </Header>
+            )}
+        </AnimatePresence>
     )
 }
 

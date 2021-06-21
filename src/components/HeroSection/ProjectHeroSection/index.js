@@ -76,69 +76,65 @@ const ProjectHeroSection = (props) => {
                 bg={background}
                 transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.96] }}
             >
-                <div data-scroll data-scroll-speed="-3">
-                    <ProjectHero.Header>
-                        <ProjectHero.Content>
-                            <H2
-                                as={motion.h1}
-                                initial={{ y: 140, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 1, duration: 0.5 }}
-                                size={4}
-                                weight={800}
-                                color={color}
-                                mb={2}
-                            >
-                                {title}
-                            </H2>
-                            <Typography
-                                as={motion.span}
-                                initial={{ y: 140, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 1.1, duration: 0.3 }}
-                            >
-                                <ProjectHero.StackWrapper>
-                                    {stack.map((item) => (
-                                        <ProjectHero.Stack
-                                            key={item}
-                                            color={color}
-                                        >
-                                            {item}
-                                        </ProjectHero.Stack>
-                                    ))}
-                                </ProjectHero.StackWrapper>
-                            </Typography>
-                            <Typography
-                                as={motion.span}
-                                initial={{ y: 140, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 1.2, duration: 0.3 }}
-                                color={color}
-                                mb={1}
-                            >
-                                STATUS: {active ? 'ACTIVE' : 'SERVICE ENDED'}
-                            </Typography>
-                            <Typography
-                                color={color}
-                                as={motion.span}
-                                initial={{ y: 140, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 1.3, duration: 0.3 }}
-                            >
-                                ROLE: {role}
-                            </Typography>
-                        </ProjectHero.Content>
-                    </ProjectHero.Header>
-                </div>
+                <ProjectHero.Header>
+                    <ProjectHero.Content>
+                        <H2
+                            as={motion.h1}
+                            initial={{ y: 140, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 140, opacity: 0 }}
+                            transition={{ delay: 0.4, duration: 0.5 }}
+                            size={4}
+                            weight={800}
+                            color={color}
+                            mb={2}
+                        >
+                            {title}
+                        </H2>
+                        <Typography
+                            as={motion.span}
+                            initial={{ y: 140, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 140, opacity: 0 }}
+                            transition={{ delay: 0.5, duration: 0.3 }}
+                        >
+                            <ProjectHero.StackWrapper>
+                                {stack.map((item) => (
+                                    <ProjectHero.Stack key={item} color={color}>
+                                        {item}
+                                    </ProjectHero.Stack>
+                                ))}
+                            </ProjectHero.StackWrapper>
+                        </Typography>
+                        <Typography
+                            as={motion.span}
+                            initial={{ y: 140, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 140, opacity: 0 }}
+                            transition={{ delay: 0.6, duration: 0.3 }}
+                            color={color}
+                            mb={1}
+                        >
+                            STATUS: {active ? 'ACTIVE' : 'SERVICE ENDED'}
+                        </Typography>
+                        <Typography
+                            color={color}
+                            as={motion.span}
+                            initial={{ y: 140, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: 140, opacity: 0 }}
+                            transition={{ delay: 0.7, duration: 0.3 }}
+                        >
+                            ROLE: {role}
+                        </Typography>
+                    </ProjectHero.Content>
+                </ProjectHero.Header>
             </ProjectHero.Background>
             <ProjectHero.Content data-scroll data-scroll-speed="2">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                     data-scroll
                     data-scroll-speed="-3"
@@ -156,6 +152,7 @@ const ProjectHeroSection = (props) => {
                 <ProjectHero.Image
                     initial={{ y: 40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 40, opacity: 0 }}
                     as={motion.img}
                     src={url}
                     // layoutId={`${slug}-img`}

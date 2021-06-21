@@ -6,11 +6,11 @@ function MyApp({ Component, pageProps, router }) {
     return (
         <StoreProvider>
             <PageLayout>
-                <AnimatePresence exitBeforeEnter>
-                    <AnimateSharedLayout type="crossfade">
+                <AnimateSharedLayout type="crossfade">
+                    <AnimatePresence exitBeforeEnter>
                         <Component {...pageProps} key={router.route} />
-                    </AnimateSharedLayout>
-                </AnimatePresence>
+                    </AnimatePresence>
+                </AnimateSharedLayout>
             </PageLayout>
         </StoreProvider>
     )
