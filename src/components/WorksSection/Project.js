@@ -1,7 +1,6 @@
 import Project from 'styles/blocks/Project'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 
 const Work = ({ img, bg, slug }) => {
     const router = useRouter()
