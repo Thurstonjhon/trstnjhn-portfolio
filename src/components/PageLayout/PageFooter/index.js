@@ -29,8 +29,10 @@ const PageFooter = () => {
         <Footer>
             <Footer.Connect>
                 <Typography size={1.2} {...hoverEvt}>
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    Let's connect
+                    <a href="mailto: design.thurston@gmail.com">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        Let's connect
+                    </a>
                 </Typography>
             </Footer.Connect>
             <Footer.Copyright>

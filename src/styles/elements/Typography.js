@@ -6,6 +6,13 @@ export const Typography = styled.span`
     font-weight: ${(props) => (props.weight ? props.weight : 400)};
     font-size: ${(props) => (props.size ? `${props.size}rem` : 1)};
     margin-bottom: ${(props) => (props.mb ? `${props.mb}rem` : '0.5rem')};
+
+    a {
+        color: ${(props) =>
+            props.color ? props.color : props.theme.colors.black};
+        text-decoration: none;
+        cursor: none;
+    }
 `
 
 export const H1 = styled.h1``
