@@ -42,7 +42,16 @@ const PageHeader = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -40, opacity: 0 }}
                 >
-                    <Header.Back onClick={() => router.back()} {...hoverEvt}>
+                    <Header.Back
+                        onClick={() => {
+                            dispatch({
+                                type: SET_CURSOR,
+                                payload: cursors.DEFAULT
+                            })
+                            router.back()
+                        }}
+                        {...hoverEvt}
+                    >
                         <FontAwesomeIcon icon={faLongArrowAltLeft} /> Back
                     </Header.Back>
 

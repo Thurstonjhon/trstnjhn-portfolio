@@ -134,7 +134,6 @@ const ProjectHeroSection = (props) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                     data-scroll
                     data-scroll-speed="-3"
@@ -152,7 +151,6 @@ const ProjectHeroSection = (props) => {
                 <ProjectHero.Image
                     initial={{ y: 40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 40, opacity: 0 }}
                     as={motion.img}
                     src={url}
                     // layoutId={`${slug}-img`}

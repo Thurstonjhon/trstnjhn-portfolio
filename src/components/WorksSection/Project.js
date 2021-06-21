@@ -36,7 +36,7 @@ const Work = ({ img, bg, slug }) => {
                             pathname: `/work/${slug}`
                         },
                         null,
-                        { scroll: true }
+                        { scroll: false }
                     )
                     .then(() => {
                         dispatch({ type: SET_CURSOR, payload: cursors.DEFAULT })
