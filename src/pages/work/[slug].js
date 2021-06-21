@@ -21,7 +21,10 @@ const ProjectPage = ({ project }) => {
         if (scroll.ls !== null && scrollRef.current !== null) {
             _scroll = new scroll.ls({
                 el: scrollRef.current,
-                smooth: true
+                smooth: true,
+                smartphone: {
+                    smooth: true
+                }
             })
 
             setTimeout(() => {

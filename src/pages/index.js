@@ -20,11 +20,10 @@ const Home = ({ projects }) => {
         if (scroll.ls !== null && scrollRef.current !== null) {
             _scroll = new scroll.ls({
                 el: scrollRef.current,
-                smooth: true
-                // initPosition: {
-                //     x: 0,
-                //     y: scroll.position
-                // }
+                smooth: true,
+                smartphone: {
+                    smooth: true
+                }
             })
 
             if (scroll.position !== 0) _scroll.scrollTo(scroll.position)
