@@ -3,6 +3,7 @@ import ProjectHeroSection from 'components/HeroSection/ProjectHeroSection'
 import { getClient } from 'contentful-api'
 import { SET_PROJECT } from 'context/action/actionTypes'
 import { Store } from 'context/store'
+import { motion } from 'framer-motion'
 import { useContext, useEffect, useRef } from 'react'
 
 let _scroll = null
@@ -35,15 +36,15 @@ const ProjectPage = ({ project }) => {
     }, [scroll.ls])
 
     return (
-        <>
-            <MetaWeb title={project.fields.title} exit={{ opacity: 0 }} />
+        <motion.div>
+            <MetaWeb title={project.fields.title} />
             <div ref={scrollRef} data-scroll-container>
                 <ProjectHeroSection
                     onImageLoaded={() => _scroll.update()}
                     project={project}
                 />
             </div>
-        </>
+        </motion.div>
     )
 }
 

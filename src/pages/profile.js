@@ -45,7 +45,21 @@ const Profile = () => {
             />
 
             <Content>
-                <Typography size={2}>I'm a Frontend Developer</Typography>
+                <Typography
+                    size={2}
+                    as={motion.span}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: 40, opacity: 0 }}
+                >
+                    Frontend Developer from Philippines. I am developing web
+                    applications with reactjs for around 4 years now, I've work
+                    on a variety of web application projects such as Electronic
+                    raffle entry registration, user interface for hardware
+                    flippy, admin tools. Currently I am trying to learn how to
+                    develop and optimize presentation websites with immersive
+                    user experience.
+                </Typography>
             </Content>
         </motion.div>
     )
