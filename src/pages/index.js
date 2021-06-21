@@ -23,10 +23,14 @@ const Home = ({ projects }) => {
                 smooth: true,
                 smartphone: {
                     smooth: true
+                },
+                initPosition: {
+                    x: 0,
+                    y: scroll.position
                 }
             })
 
-            if (scroll.position !== 0) _scroll.scrollTo(scroll.position)
+            // if (scroll.position !== 0) _scroll.scrollTo(scroll.position)
 
             _scroll.on('scroll', (args) => {
                 _scrollPosition = args.scroll.y

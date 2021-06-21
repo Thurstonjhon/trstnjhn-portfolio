@@ -20,9 +20,6 @@ const CustomCursor = () => {
 
     const cursorX = useMotionValue(-100)
     const cursorY = useMotionValue(-100)
-    const springConfig = { damping: 25, stiffness: 200 }
-    const cursorXSpring = useSpring(cursorX, springConfig)
-    const cursorYSpring = useSpring(cursorY, springConfig)
 
     useEffect(() => {
         const moveCursor = (e) => {
@@ -41,8 +38,8 @@ const CustomCursor = () => {
             ref={cursorRef}
             as={motion.div}
             style={{
-                translateX: cursorXSpring,
-                translateY: cursorYSpring
+                translateX: cursorX,
+                translateY: cursorY
             }}
         >
             <AnimateSharedLayout>

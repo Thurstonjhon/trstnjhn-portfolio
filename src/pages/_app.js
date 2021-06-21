@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps, router }) {
     return (
         <StoreProvider>
             <PageLayout>
-                <AnimateSharedLayout type="crossfade">
+                <AnimateSharedLayout>
                     <AnimatePresence exitBeforeEnter>
                         <Component {...pageProps} key={router.route} />
                     </AnimatePresence>

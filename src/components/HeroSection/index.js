@@ -11,7 +11,6 @@ const HeroSection = ({ title, subtitle, ...rest }) => {
                     as={motion.span}
                     initial={{ y: 40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 40, opacity: 0 }}
                 >
                     {subtitle}
                 </H2>
@@ -20,7 +19,6 @@ const HeroSection = ({ title, subtitle, ...rest }) => {
                     as={motion.h1}
                     initial={{ y: 40, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 40, opacity: 0 }}
                 >
                     {title}
                 </Hero.MainText>
