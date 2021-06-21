@@ -7,8 +7,10 @@ import {
     scrollReducer,
     scrollReducerInitialState
 } from 'context/reducer/scroll'
+import { headerReducer, headerReducerInitialState } from './header'
 
 export const [rootReducer, initialRootState] = combineReducers({
     cursor: [cursorReducer, cursorReducerInitialState],
-    scroll: [scrollReducer, scrollReducerInitialState]
+    scroll: [scrollReducer, scrollReducerInitialState],
+    header: [headerReducer, headerReducerInitialState]
 })

@@ -1,6 +1,7 @@
 import MetaWeb from 'components/common/MetaWeb'
 import ProjectHeroSection from 'components/HeroSection/ProjectHeroSection'
 import { getClient } from 'contentful-api'
+import { SET_PROJECT } from 'context/action/actionTypes'
 import { Store } from 'context/store'
 import { useContext, useEffect, useRef } from 'react'
 
@@ -9,8 +10,12 @@ let _scroll = null
 const ProjectPage = ({ project }) => {
     const scrollRef = useRef(null)
 
-    const { state } = useContext(Store)
+    const { state, dispatch } = useContext(Store)
     const { scroll } = state
+
+    useEffect(() => {
+        dispatch({ type: SET_PROJECT, payload: project })
+    }, [project])
 
     useEffect(() => {
         if (scroll.ls !== null && scrollRef.current !== null) {

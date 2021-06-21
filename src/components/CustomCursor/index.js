@@ -8,6 +8,8 @@ import {
 } from 'framer-motion'
 import { Store } from 'context/store'
 import { cursors } from 'utils/common.const'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons'
 
 const CustomCursor = () => {
     const cursorRef = useRef(null)
@@ -53,9 +55,12 @@ const CustomCursor = () => {
                     </Cursor.SwiperGrab>
                 )}
                 {cursorStyle === cursors.HOVERED && (
-                    <Cursor.Hovered as={motion.div} layoutId="cursor">
-                        SWIPE
-                    </Cursor.Hovered>
+                    <Cursor.Hovered as={motion.div} layoutId="cursor" />
+                )}
+                {cursorStyle === cursors.VIEW && (
+                    <Cursor.View as={motion.div} layoutId="cursor">
+                        <FontAwesomeIcon icon={faLongArrowAltRight} />
+                    </Cursor.View>
                 )}
             </AnimateSharedLayout>
         </Cursor>

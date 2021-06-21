@@ -70,27 +70,13 @@ const ProjectHeroSection = (props) => {
                 data-scroll-sticky
                 data-scroll-target="main"
             />
-
             <ProjectHero.Background
                 as={motion.div}
                 layoutId={slug}
                 bg={background}
                 transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.96] }}
             >
-                <div data-scroll data-scroll-speed="-2">
-                    {/* <ProjectHero.Image
-                        // initial={{ y: 40, opacity: 0 }}
-                        // animate={{ y: 0, opacity: 1 }}
-                        as={motion.img}
-                        src={url}
-                        layoutId={`${slug}-img`}
-                        alt="Manila Cocktail Festival"
-                        onLoad={() => onImageLoaded()}
-                        transition={{
-                            duration: 1.3,
-                            ease: [0.6, 0.01, -0.05, 0.96]
-                        }}
-                    /> */}
+                <div data-scroll data-scroll-speed="-3">
                     <ProjectHero.Header>
                         <ProjectHero.Content>
                             <H2
@@ -102,33 +88,60 @@ const ProjectHeroSection = (props) => {
                                 size={4}
                                 weight={800}
                                 color={color}
+                                mb={2}
                             >
                                 {title}
                             </H2>
-                            <Typography>
+                            <Typography
+                                as={motion.span}
+                                initial={{ y: 140, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 140, opacity: 0 }}
+                                transition={{ delay: 0.5, duration: 0.3 }}
+                            >
                                 <ProjectHero.StackWrapper>
                                     {stack.map((item) => (
-                                        <ProjectHero.Stack key={item}>
+                                        <ProjectHero.Stack
+                                            key={item}
+                                            color={color}
+                                        >
                                             {item}
                                         </ProjectHero.Stack>
                                     ))}
                                 </ProjectHero.StackWrapper>
                             </Typography>
-                            <Typography>
+                            <Typography
+                                as={motion.span}
+                                initial={{ y: 140, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 140, opacity: 0 }}
+                                transition={{ delay: 0.6, duration: 0.3 }}
+                                color={color}
+                                mb={1}
+                            >
                                 STATUS: {active ? 'ACTIVE' : 'SERVICE ENDED'}
                             </Typography>
-                            <Typography>ROLE: {role}</Typography>
+                            <Typography
+                                color={color}
+                                as={motion.span}
+                                initial={{ y: 140, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: 140, opacity: 0 }}
+                                transition={{ delay: 0.7, duration: 0.3 }}
+                            >
+                                ROLE: {role}
+                            </Typography>
                         </ProjectHero.Content>
                     </ProjectHero.Header>
                 </div>
             </ProjectHero.Background>
-            <ProjectHero.Content data-scroll data-scroll-speed="1">
+            <ProjectHero.Content data-scroll data-scroll-speed="2">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                     data-scroll
-                    data-scroll-speed="-2"
+                    data-scroll-speed="-3"
                 >
                     <ProjectHero.BackgroundText
                         as={motion.div}
@@ -141,8 +154,8 @@ const ProjectHeroSection = (props) => {
                     </ProjectHero.BackgroundText>
                 </motion.div>
                 <ProjectHero.Image
-                    // initial={{ y: 40, opacity: 0 }}
-                    // animate={{ y: 0, opacity: 1 }}
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     as={motion.img}
                     src={url}
                     layoutId={`${slug}-img`}
@@ -153,7 +166,7 @@ const ProjectHeroSection = (props) => {
                         ease: [0.6, 0.01, -0.05, 0.96]
                     }}
                 />
-                <ProjectHero.Overview>
+                <ProjectHero.Overview data-scroll data-scroll-speed="2">
                     <Typography weight={600}>01 Overview</Typography>
                     <ProjectHero.Info.RichContent>
                         {documentToReactComponents(overview)}
@@ -188,14 +201,14 @@ const ProjectHeroSection = (props) => {
                 </div>
             </ProjectHero.Screenshots>
             <ProjectHero.Content>
-                <ProjectHero.Development data-scroll data-scroll-speed="1">
+                <ProjectHero.Development data-scroll data-scroll-speed="2">
                     <Typography weight={600}>03 Development</Typography>
                     <ProjectHero.Info.RichContent>
                         {documentToReactComponents(development)}
                     </ProjectHero.Info.RichContent>
                 </ProjectHero.Development>
 
-                <ProjectHero.Challenges data-scroll data-scroll-speed="1">
+                <ProjectHero.Challenges data-scroll data-scroll-speed="2">
                     <Typography weight={600}>04 Challenge</Typography>
                     <ProjectHero.Info.RichContent>
                         {documentToReactComponents(challenges)}

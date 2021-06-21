@@ -4,3 +4,8 @@ export const cursors = {
     VIEW: 'view',
     SWIPER_GRAB: 'swiper_grab'
 }
+
+export const headers = {
+    DEFAULT: 'default',
+    PROJECT_INFO: 'project_info'
+}
