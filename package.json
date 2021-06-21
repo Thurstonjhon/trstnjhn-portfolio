@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "contentful": "^8.4.2",
     "framer-motion": "^4.1.17",
     "locomotive-scroll": "^4.1.1",
