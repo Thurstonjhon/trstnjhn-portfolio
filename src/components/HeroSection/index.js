@@ -6,10 +6,8 @@ const HeroSection = ({ ...rest }) => {
     return (
         <Hero {...rest}>
             <Hero.Content data-scroll data-scroll-speed="-2">
-                <Text size={1.5}>Selected</Text>
-                <H2 size={10}>
-                    Works <Text size={1.3}>as of 26/06/2021</Text>
-                </H2>
+                <H2 size={1}>Selected</H2>
+                <Hero.MainText size={10}>Works</Hero.MainText>
             </Hero.Content>
         </Hero>
     )

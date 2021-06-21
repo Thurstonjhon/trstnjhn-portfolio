@@ -6,7 +6,8 @@ import theme from 'utils/theme'
 
 import { Store } from 'context/store'
 import { SET_LS } from 'context/action/actionTypes'
-import PageHeader from 'components/PageLayout/PageHeader'
+import PageHeader from './PageHeader'
+import PageFooter from './PageFooter'
 import CustomCursor from 'components/CustomCursor'
 import GridBackground from 'components/GridBg'
 
@@ -57,6 +58,7 @@ const PageLayout = ({ children }) => {
                 {children}
                 {/* </AnimateSharedLayout> */}
             </main>
+            <PageFooter />
         </ThemeProvider>
     )
 }

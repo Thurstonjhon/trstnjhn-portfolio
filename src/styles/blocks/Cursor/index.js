@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Default } from './Default'
 import { Hovered } from './Hovered'
 import { SwiperGrab } from './SwiperGrab'
+import { View } from './View'
 
 const Cursor = styled.div`
     position: fixed;
@@ -20,5 +21,6 @@ const Cursor = styled.div`
 Cursor.Default = Default
 Cursor.SwiperGrab = SwiperGrab
 Cursor.Hovered = Hovered
+Cursor.View = View
 
 export default Cursor

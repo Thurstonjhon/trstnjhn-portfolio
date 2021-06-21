@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { Logo, LogoText } from './Logo'
 import { Text } from './Text'
 import { Menu, MenuItem } from './Menu'
+import { Back } from './Back'
+import { Visit } from './Visit'
 
 const Header = styled.header`
     padding: ${(props) => props.theme.spacing.lg};
@@ -24,5 +26,7 @@ Header.MenuItem = MenuItem
 Header.Logo = Logo
 Header.LogoText = LogoText
 Header.Text = Text
+Header.Back = Back
+Header.Visit = Visit
 
 export default Header

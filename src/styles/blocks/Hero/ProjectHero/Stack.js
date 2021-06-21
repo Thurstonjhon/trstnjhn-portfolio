@@ -11,6 +11,8 @@ export const Stack = styled.div`
     width: max-content;
     border-radius: 10px;
     margin-right: ${(props) => props.theme.spacing.sm};
+    margin-bottom: 2rem;
+    color: ${(props) => (props.color ? props.color : props.theme.colors.black)};
 
     &:last-child {
         margin-right: 0;

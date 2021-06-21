@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Content } from './Content'
+import { MainText } from './MainText'
 
 const Hero = styled.section`
     padding-top: 15rem;
@@ -10,5 +11,6 @@ const Hero = styled.section`
 `
 
 Hero.Content = Content
+Hero.MainText = MainText
 
 export default Hero
