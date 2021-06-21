@@ -6,6 +6,8 @@ import { Store } from 'context/store'
 import { cursors } from 'utils/common.const'
 import { SET_CURSOR } from 'context/action/actionTypes'
 
+import Link from 'next/link'
+
 const Work = ({ img, bg, slug }) => {
     const router = useRouter()
     const { dispatch } = useContext(Store)
@@ -28,22 +30,22 @@ const Work = ({ img, bg, slug }) => {
         <Project
             as={motion.div}
             onClick={() => {
-                dispatch({ type: SET_CURSOR, payload: cursors.DEFAULT })
-                router.push(
-                    {
-                        pathname: `/work/${slug}`
-                    },
-                    null,
-                    { scroll: true }
-                )
+                router
+                    .push(
+                        {
+                            pathname: `/work/${slug}`
+                        },
+                        null,
+                        { scroll: true }
+                    )
+                    .then(() => {
+                        dispatch({ type: SET_CURSOR, payload: cursors.DEFAULT })
+                    })
             }}
             bg={bg}
             layoutId={slug}
             transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.96] }}
-            {...hoverEvt}
-            // whileHover={{
-            //     scale: 0.95
-            // }}
+            // {...hoverEvt}
         >
             <Project.Image
                 as={motion.img}

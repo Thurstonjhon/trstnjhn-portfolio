@@ -84,7 +84,7 @@ const ProjectHeroSection = (props) => {
                                 initial={{ y: 140, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 0.4, duration: 0.5 }}
+                                transition={{ delay: 1, duration: 0.5 }}
                                 size={4}
                                 weight={800}
                                 color={color}
@@ -97,7 +97,7 @@ const ProjectHeroSection = (props) => {
                                 initial={{ y: 140, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 0.5, duration: 0.3 }}
+                                transition={{ delay: 1.1, duration: 0.3 }}
                             >
                                 <ProjectHero.StackWrapper>
                                     {stack.map((item) => (
@@ -115,7 +115,7 @@ const ProjectHeroSection = (props) => {
                                 initial={{ y: 140, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 0.6, duration: 0.3 }}
+                                transition={{ delay: 1.2, duration: 0.3 }}
                                 color={color}
                                 mb={1}
                             >
@@ -127,7 +127,7 @@ const ProjectHeroSection = (props) => {
                                 initial={{ y: 140, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 exit={{ y: 140, opacity: 0 }}
-                                transition={{ delay: 0.7, duration: 0.3 }}
+                                transition={{ delay: 1.3, duration: 0.3 }}
                             >
                                 ROLE: {role}
                             </Typography>
@@ -158,7 +158,7 @@ const ProjectHeroSection = (props) => {
                     animate={{ y: 0, opacity: 1 }}
                     as={motion.img}
                     src={url}
-                    layoutId={`${slug}-img`}
+                    // layoutId={`${slug}-img`}
                     alt="Manila Cocktail Festival"
                     onLoad={() => onImageLoaded()}
                     transition={{
