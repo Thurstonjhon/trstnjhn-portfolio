@@ -36,7 +36,7 @@ const ProjectPage = ({ project }) => {
 
     return (
         <>
-            <MetaWeb title={project.fields.title} />
+            <MetaWeb title={project.fields.title} exit={{ opacity: 0 }} />
             <div ref={scrollRef} data-scroll-container>
                 <ProjectHeroSection
                     onImageLoaded={() => _scroll.update()}

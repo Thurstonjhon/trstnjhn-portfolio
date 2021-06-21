@@ -34,7 +34,7 @@ const PageHeader = () => {
     }
 
     return (
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
             {router.pathname.includes('work') ? (
                 <Header
                     as={motion.header}

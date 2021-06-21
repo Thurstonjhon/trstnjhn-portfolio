@@ -4,6 +4,8 @@ import { useContext, useEffect, useRef } from 'react'
 
 import HeroSection from 'components/HeroSection'
 import { motion } from 'framer-motion'
+import { Content } from 'styles/blocks/Hero/ProjectHero/Content'
+import { Typography } from 'styles/elements/Typography'
 
 const Profile = () => {
     const scrollRef = useRef(null)
@@ -41,6 +43,10 @@ const Profile = () => {
                 as={motion.section}
                 exit={{ opacity: 0 }}
             />
+
+            <Content>
+                <Typography size={2}>I'm a Frontend Developer</Typography>
+            </Content>
         </motion.div>
     )
 }

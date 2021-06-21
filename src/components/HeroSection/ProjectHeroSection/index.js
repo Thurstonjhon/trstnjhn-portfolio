@@ -10,24 +10,24 @@ import { Store } from 'context/store'
 import { cursors } from 'utils/common.const'
 import { SET_CURSOR } from 'context/action/actionTypes'
 
-// const swiperBreakpoints = {
-//     640: {
-//         slidesPerView: 2,
-//         spaceBetween: 20
-//     },
-//     768: {
-//         slidesPerView: 2,
-//         spaceBetween: 40
-//     },
-//     1024: {
-//         slidesPerView: 2,
-//         spaceBetween: 50
-//     },
-//     1920: {
-//         slidesPerView: 2,
-//         spaceBetween: 50
-//     }
-// }
+const swiperBreakpoints = {
+    640: {
+        slidesPerView: 1,
+        spaceBetween: 0
+    },
+    768: {
+        slidesPerView: 2,
+        spaceBetween: 40
+    },
+    1024: {
+        slidesPerView: 2,
+        spaceBetween: 50
+    },
+    1920: {
+        slidesPerView: 2,
+        spaceBetween: 50
+    }
+}
 
 const ProjectHeroSection = (props) => {
     const { dispatch } = useContext(Store)
@@ -73,7 +73,7 @@ const ProjectHeroSection = (props) => {
                 as={motion.div}
                 layoutId={slug}
                 bg={background}
-                transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.96] }}
+                // transition={{ duration: 1, ease: [0.6, 0.01, -0.05, 0.96] }}
             >
                 <ProjectHero.Header>
                     <ProjectHero.Content>
@@ -81,7 +81,6 @@ const ProjectHeroSection = (props) => {
                             as={motion.h1}
                             initial={{ y: 140, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 140, opacity: 0 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
                             size={4}
                             weight={800}
@@ -94,7 +93,6 @@ const ProjectHeroSection = (props) => {
                             as={motion.span}
                             initial={{ y: 140, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 140, opacity: 0 }}
                             transition={{ delay: 0.5, duration: 0.3 }}
                         >
                             <ProjectHero.StackWrapper>
@@ -109,7 +107,6 @@ const ProjectHeroSection = (props) => {
                             as={motion.span}
                             initial={{ y: 140, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 140, opacity: 0 }}
                             transition={{ delay: 0.6, duration: 0.3 }}
                             color={color}
                             mb={1}
@@ -121,7 +118,6 @@ const ProjectHeroSection = (props) => {
                             as={motion.span}
                             initial={{ y: 140, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 140, opacity: 0 }}
                             transition={{ delay: 0.7, duration: 0.3 }}
                         >
                             ROLE: {role}
@@ -173,13 +169,13 @@ const ProjectHeroSection = (props) => {
                 </ProjectHero.Content>
                 <div onMouseEnter={handleMouseIn} onMouseLeave={handleMouseOut}>
                     <Swiper
-                        slidesPerView={2}
-                        spaceBetween={20}
+                        slidesPerView={1}
+                        spaceBetween={0}
                         pagination={{
                             clickable: true
                         }}
                         centeredSlides={true}
-                        // breakpoints={swiperBreakpoints}
+                        breakpoints={swiperBreakpoints}
                         className="mySwiper"
                     >
                         {screenshots.map((screenshot) => (
