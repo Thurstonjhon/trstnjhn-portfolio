@@ -30,7 +30,7 @@ const ProjectPage = ({ project }) => {
 
             setTimeout(() => {
                 _scroll.update()
-            }, 100)
+            }, 500)
         }
         return () => _scroll !== null && _scroll.destroy()
     }, [scroll.ls])
