@@ -38,7 +38,7 @@ const Home = ({ projects }) => {
 
             setTimeout(() => {
                 _scroll.update()
-            }, 100)
+            }, 500)
         }
 
         return () => {
